@@ -28,9 +28,12 @@ rarely and only with the trend:
 Everything is a deterministic function of the bars: no clock, no network, no
 randomness, no environment. The same bars give the same orders, run after run.
 
-Backtested on the kit's dev window (1,440 bars, BTC -2.8% in chop): net PnL
-about +$11 on $1,000, 3 trades, max drawdown 0.64%. Buy-and-hold loses $31.63
-on the same window, and a plain EMA(8)/EMA(21) cross loses $148 on 80 trades.
+Validated on the kit's dev window (1,440 bars, BTC -2.8% in chop) with a
+protocol-level replay that speaks hello, batch and done to this bot and fills
+its orders at the next bar's open exactly as the harness does: net PnL +$12.26
+on $1,000, 3 trades, max drawdown 0.64%, and two runs produce byte-identical
+orders. Buy-and-hold loses $31.63 on the same window, and a plain EMA(8) /
+EMA(21) cross loses $148 on 80 trades.
 """
 
 import os
